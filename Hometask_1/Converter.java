@@ -14,10 +14,8 @@ public class Converter {
 
         System.out.print("Enter money in BYN: ");
         byn = scan.nextDouble();
-        rubResult = decimalFormat.format(byn *100/ rubExchange);
+        rubResult = decimalFormat.format(byn*100 / rubExchange);
         usdResult = decimalFormat.format(byn / usdExchange);
-
-
         System.out.println(byn + " белорусских рублей - это " + usdResult + "$ или " + rubResult + " российских рублей.");
 
         if (usdExchange<oldUsdExchange){
