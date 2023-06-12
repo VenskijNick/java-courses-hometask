@@ -20,6 +20,6 @@ public class Driver {
         System.out.print("Enter yours service price: ");
         cost = scan.nextInt();
         System.out.println("Information about you:\nName: " +name+"\n"+ "Category: "+category+",\n"+"Car number: "+ carsNumber+"\n"+"Car brand: "+carsBrand+"\n"+"Service price: "+cost);
-
+        System.out.println("fde");
     }
 }
