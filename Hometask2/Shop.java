@@ -9,7 +9,7 @@ public class Shop {
         double sum;
         System.out.println("Enter your sum");
         sum =  scan.nextDouble();
-        double totalSum = sum >1400 ? sum *0.97 : sum;
+        double totalSum = sum >1400 ? sum *0.93 : sum;
         System.out.println(totalSum);
     }
 }
