@@ -1,4 +1,4 @@
-package Hometask2;
+package hometask2;
 
 import java.util.Scanner;
 
@@ -8,8 +8,8 @@ public class Shop {
 
         double sum;
         System.out.println("Enter your sum");
-        sum =  scan.nextDouble();
-        double totalSum = sum >1400 ? sum *0.97 : sum;
+        sum = scan.nextDouble();
+        double totalSum = sum > 1400 ? sum * 0.97 : sum;
         System.out.println(totalSum);
     }
 }
