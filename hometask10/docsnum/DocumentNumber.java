@@ -8,7 +8,7 @@ public class DocumentNumber {
 
     public static void printFirstTwoBlocks(String input) {
         String[] blocks = input.split("-");
-        System.out.println(blocks[0].substring(0, 3) + " " + blocks[2].substring(0, 3));
+        System.out.println(blocks[0].substring(0, 4) + " " + blocks[2].substring(0, 4));
     }
 
     public static void replaceBlocks(String input) {
