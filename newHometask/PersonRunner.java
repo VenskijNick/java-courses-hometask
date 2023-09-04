@@ -4,16 +4,28 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
-
 public class PersonRunner {
 
     public static void main(String[] args) throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         System.out.print("Enter the file path: ");
-        String filePath = reader.readLine();
+        String filePath;
+        try {
+            filePath = reader.readLine();
+        } catch (IOException exception) {
+            System.out.println("Couldn't file path: " + exception.getMessage());
+            return;
+        }
         reader.close();
         List<Person> personList = new ArrayList<>();
-        BufferedReader fileReader = new BufferedReader(new FileReader(filePath));
+        BufferedReader fileReader;
+        try {
+            fileReader = new BufferedReader(new FileReader(filePath));
+
+        } catch (FileNotFoundException exception) {
+            System.out.println("File not found: " + exception.getMessage());
+            return;
+        }
         String line;
 
         while ((line = fileReader.readLine()) != null) {
