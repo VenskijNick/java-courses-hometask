@@ -4,9 +4,7 @@ public class Person {
     private String name;
     private String surname;
     private String sex;
-
     private int age;
-
     public Person(String name, String surname, String sex, int age) {
         this.name = name;
         this.surname = surname;
