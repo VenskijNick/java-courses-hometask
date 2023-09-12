@@ -1,0 +1,33 @@
+.my_table {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    color: #3ec86e;
+}
+
+.text {
+    text-align: center;
+    color: #a23232;
+}
+
+img:hover {
+    border-radius: 30px;
+    transition: 600ms;
+    border-color: #a23232;
+    border-style: groove;
+}
+
+img {
+    width: 40px;
+    height: 40px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+    animation-duration: 3s;
+    animation-name: slidein;
+}
+  
+
+
+  

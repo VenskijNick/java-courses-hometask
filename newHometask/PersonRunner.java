@@ -27,25 +27,33 @@ public class PersonRunner {
             return;
         }
         String line;
-
-        while ((line = fileReader.readLine()) != null) {
-            String[] fields = line.split(",");
-            String firstName = fields[0].trim();
-            String lastName = fields[1].trim();
-            String gender = fields[2].trim();
-            int age = Integer.parseInt(fields[3].trim());
-            personList.add(new Person(firstName, lastName, gender, age));
+        try {
+            while ((line = fileReader.readLine()) != null) {
+                String[] fields = line.split(",");
+                String firstName = fields[0].trim();
+                String lastName = fields[1].trim();
+                String gender = fields[2].trim();
+                int age = Integer.parseInt(fields[3].trim());
+                personList.add(new Person(firstName, lastName, gender, age));
+            }
+            fileReader.close();
+        } catch (IOException exception) {
+            System.out.println("Error reading file: " + exception.getMessage());
         }
-        fileReader.close();
+
         personList.sort(Comparator.comparing(Person::getSurname).thenComparing(Person::getName));
 
         // Write the sorted persons back to the file
-        FileWriter fileWriter = new FileWriter(filePath);
-        for (Person person : personList) {
-            fileWriter.write(person.getName() + ", " + person.getSurname() + ", " + person.getSex() + ", " + person.getAge() + "\n");
+        FileWriter fileWriter;
+        try {
+            fileWriter = new FileWriter(filePath);
+            for (Person person : personList) {
+                fileWriter.write(person.getName() + ", " + person.getSurname() + ", " + person.getSex() + ", " + person.getAge() + "\n");
+            }
+            fileWriter.close();
+        } catch (IOException exception) {
+            System.out.println("Error writing to the file: " + exception.getMessage());
         }
-        fileWriter.close();
-
         // Count the persons with age > 30
         long count = personList.stream().filter(person -> person.getAge() > 30).count();
         System.out.println("Count: " + count);
